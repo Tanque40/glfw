@@ -2,6 +2,7 @@
 build
 bin/*
 bin-obj/*
+bin-int/*
 
 # Visual Studio clutter
 _ReSharper*
