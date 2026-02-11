@@ -3,10 +3,9 @@ kind "StaticLib"
 language "C"
 staticruntime "off"
 warnings "off"
-architecture "universal"
 
-targetdir("bin/" .. OutputDir .. "/%{prj.name}")
-objdir("bin-int/" .. OutputDir .. "/%{prj.name}")
+targetdir("bin/" .. outputdir .. "/%{prj.name}")
+objdir("bin-int/" .. outputdir .. "/%{prj.name}")
 
 files
 {
@@ -56,6 +55,7 @@ defines
 
 filter "system:macosx"
 pic "On"
+architecture 'ARM64'
 
 externalincludedirs { "include" }
 files
@@ -112,7 +112,6 @@ filter { "system:windows", "configurations:Debug-AS" }
 runtime "Debug"
 symbols "on"
 sanitize { "Address" }
-flags { "NoRuntimeChecks", "NoIncrementalLink" }
 
 filter "configurations:Release"
 runtime "Release"
